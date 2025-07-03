@@ -1,0 +1,42 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div  class="container mt-5">
+    <form class="col-6 mx-auto card p-3" method="post" style="border-radius: 19px; background-color: #f8f9fa;">
+        {% csrf_token %}
+
+        <h1 style="text-align: center; text-shadow: 1px 10px 17px black; border-radius: 19px;">Login</h1>
+
+        <!-- Display error message -->
+        {% if error_message %}
+        <div style="background-color: #ffcccc; color: red; padding: 10px; border-radius: 10px; margin-bottom: 15px;">
+            {{ error_message }}
+        </div>
+        {% endif %}
+
+        <!-- Username input field -->
+        <div style="margin-bottom: 15px;">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter username" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+
+        <!-- Password input field -->
+        <div style="margin-bottom: 15px;">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" style="display: block; margin: 0 auto; padding: 10px 20px; border-radius: 20px; background-color: green; color: white; border: none; cursor: pointer;">Login</button>
+         <!-- Link to registration page -->
+         <p>Don't have an account <a href="{% url 'register' %}">Register</a> </p>
+
+         <!-- Submit button
+         <button type="submit" class="btn btn-primary">Submit</button> -->
+    </form>
+</div>
+{% endblock %}

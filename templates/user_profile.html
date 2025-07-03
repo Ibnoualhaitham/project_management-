@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h1>Welcome to Finance World ????</h1>
+
+  <img src="https://i.ibb.co/RNB6jpM/welcome.gif" alt="Welcome Cartoon">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="jumbotron">
+        <h3>Welcome back Mr. {{ user.username }}</h3>
+        <h4>First Name : {{ user.first_name }}</h4>
+        <h4>Email : {{ user.email }}</h4>
+        <h4>Last Login : {{ user.last_login }}</h4>
+        <h4>Date of Join : {{ user.date_joined }}</h4>
+        <button style=" margin-left: 20vh; margin-top:2vh;font-size: 20px;"><a href="{% url 'project_list' %}">Go to Home Page</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

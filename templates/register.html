@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} User SignUp Form {% endblock %}
+
+{% block content %} 
+
+<div class="container mt-5">
+  <div class="row my-2 mx-2 p-5"  >
+    <div class="col-md-6 bg-light mx-auto my-auto" style="border-radius:19px;">
+      <h1 class="jumbotron" style="text-shadow:1px 10px 17px black;border-radius:19px; width:18vh; margin-left: 18vh;">Sign Up</h1>
+      <form method="post">
+
+        {% csrf_token %}
+        {{form.as_p}}
+
+      <br>
+      
+      <input type="submit" style="margin-left:39%; margin-top:15px;margin-bottom:16px;border-radius:20%;" onclick="Onclick()" class="btn btn-success p-2 " value="Sign Up"/>
+      
+      </form>
+      <p class="mt-3 text-center">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+
+  </div>
+
+</div> 
+
+  <script>
+
+  function Onclick(){
+    alert("Thank You for Registering")
+  }
+
+  </script>
+
+   
+   
+{% endblock %}

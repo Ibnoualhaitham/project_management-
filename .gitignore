@@ -6,6 +6,29 @@ __pycache__/
 # C extensions
 *.so
 
+# Virtual environment
+venv/
+env/
+.env
+
+# Django specific
+db.sqlite3          # Ignore the SQLite database file
+/media/             # Ignore the entire media directory (for user uploads)
+/static/            # Ignore collected static files (if collected at root)
+
+# IDE specific files (add if applicable)
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Logs (if any)
+*.log
+
+
+
 # Distribution / packaging
 .Python
 build/
